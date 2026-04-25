@@ -98,11 +98,8 @@ export function Footer({ dict }: { dict: Dictionary }) {
       <div className="container">
         <div className="grid-3 mb-12 border-b border-white/10 pb-12">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-white rounded p-1 flex items-center justify-center">
-                <Image src="/logo.png" alt="WipeUp Logo" width={40} height={40} className="object-contain" />
-              </div>
-              <h3 className="text-2xl font-bold text-primary-light">WipeUp</h3>
+            <div className="mb-6">
+              <Image src="/logo.png" alt="WipeUp Logo" width={180} height={54} className="object-contain h-12 w-auto" />
             </div>
             <p className="text-text-secondary text-sm leading-relaxed mb-6">
               {dict.hero.subtitle}

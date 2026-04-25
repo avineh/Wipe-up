@@ -2,6 +2,11 @@
 
 # dependencies
 /node_modules
+.next
+out
+build
+.env*.local
+.vercel
 /.pnp
 .pnp.*
 .yarn/*
