@@ -1,0 +1,169 @@
+Business & Website Content Specification (English Version)
+Page 1: Roadmap – From Concept to Execution
+Concept:
+A dynamic timeline showcasing the venture’s maturity and the precise path toward mass production.
+Completed Stages (Validation & Foundation)
+•	Ideation & Proof of Concept (POC):
+A functional prototype was built, successfully demonstrating micro-mist wetting without tearing the paper.
+•	Global Go-To-Market Strategy:
+Market analysis across the US, Europe, Japan, and Israel, identifying a 15–20% adoption potential in the Israeli market.
+•	Intellectual Property Protection:
+Patent application No. 327637 filed under an accelerated track, protecting the spiral mechanism and consumable lock-in system.
+•	Full Engineering Definition:
+Completion of PRD Version 6.0, including a fully closed-system architecture.
+________________________________________
+Current Stage (The Execution Bridge)
+•	Transition from conceptual designs to full engineering documentation (STEP files + BOM).
+•	Finalization of the proprietary Lock-in model ensuring recurring revenue via an asymmetric sleeve mechanism.
+________________________________________
+Future Milestones
+•	Months 0–5:
+Development of a complete engineering prototype for presentation to paper corporations.
+•	Months 6–12:
+Establishment of manufacturing infrastructure (CAPEX: ₪490,000), including cutting and packaging machines.
+•	Months 12–18:
+Pilot in Israel (local production via partners like Hogla/Sano to reduce logistics costs), CE/FDA certification, and global launch.
+________________________________________
+Page 2: Human Capital – Team & Ownership
+Concept:
+Presenting the “Smart Equity” and the professional expertise driving the venture.
+•	Asher – Founder & VP Operations:
+A hygiene domain expert with deep industry knowledge, responsible for supplier relations, global paper manufacturers, and leading market research.
+•	Avi Nehama – Partner, VP R&D & Information Systems:
+Brings a strong IT background. Leads digital infrastructure, website development, investment platforms, and technical synchronization.
+Equity: 18%
+•	Shimon – Operations & Procurement Manager:
+Handles financial operations, banking activities, regulatory processes, and legal registrations.
+________________________________________
+Page 3: Work Plan & Financials (Timeline & Budget)
+Concept:
+A transparent dashboard presenting past investments and future projections on a unified timeline.
+•	Investment to Date:
+~₪320,000
+(₪200K cash + ₪120K founder work hours)
+•	Funding Requirement: ₪900,000
+Allocation
+•	R&D (Prototype): $20K–$25K
+•	CAPEX (₪490K):
+o	Main machine: ₪300K
+o	Packaging: ₪40K
+o	Shrink: ₪20K
+o	Office & infrastructure: ₪130K
+•	IP & Regulation: ₪85K (PCT + global markets)
+•	OPEX Forecast:
+~₪22,000/month (rent, taxes, insurance)
+________________________________________
+Page 4: Visual Experience (Animation Script)
+Scene 1 – The Primitive Era
+A caveman struggles to clean himself using rough materials, scratching against rocks.
+Voiceover:
+“Traditional cleaning is primitive, uncomfortable — and not truly clean.”
+Scene 2 – Inside the Technology
+A modern device appears in 3D.
+Paper travels through a 450mm spiral path, receiving micro-mist (30–50 microns) applied only to the center.
+Scene 3 – The Modern Experience
+A 23° ceramic blade cuts cleanly.
+A modern user exits a bathroom feeling fresh.
+Voiceover:
+“WipeUp — Experience true cleanliness, with a single touch.”
+________________________________________
+Page 5: Technical Overview (Specs & IP)
+Concept:
+Engineering transparency without exposing trade secrets.
+Technical Specs
+•	Power: 2 AA lithium batteries (8–12 months)
+•	Protection: IPX4 moisture resistance
+•	Precision: IR sensors + rotary encoder (±2mm cutting accuracy)
+IP Portfolio
+•	Patent No. 327637 protects:
+o	Spiral mechanical system
+o	Mist regulation
+o	Consumable lock-in mechanism
+•	Extensions:
+o	Baby version (hypoallergenic)
+o	Institutional version (anti-vandal design)
+________________________________________
+Page 6: Investor Portal
+Concept:
+Presenting the business opportunity and dynamic valuation model.
+•	Pre-money valuation: ₪2.4M
+Investment Terms
+•	Current stage:
+$20,000 per 1% (minimum 10%)
+•	Post-prototype:
+$50,000 per 1%
+•	Post-pilot projection:
+~$10M valuation (~$100K per 1%)
+________________________________________
+Business Model (Razor & Blades)
+•	Annual revenue per household: ~$88
+•	Gross profit per household: ~$52
+________________________________________
+Page 7: Contact & CRM
+Concept:
+Structured data collection for ongoing engagement.
+Form Fields
+•	Name
+•	Phone
+•	Email
+•	Company
+•	Message
+User Type Selection
+•	Investor
+•	Business Partner
+•	Interested Customer
+Features
+•	Newsletter signup
+•	Automated confirmation:
+“Thank you! Your information has been received. The WipeUp team will get back to you shortly.”
+________________________________________
+Page 8: FAQ – Investor & Customer Insights
+Concept:
+Accordion-style interface to remove friction and highlight value.
+________________________________________
+Key Questions
+How does the Lock-in model work?
+A proprietary asymmetric sleeve ensures only original consumables activate the wet function.
+________________________________________
+What does the patent cover?
+The spiral path (450mm), micro-mist system, and consumable detection mechanism.
+________________________________________
+How is the ₪2.4M valuation justified?
+Based on:
+•	₪320K already invested
+•	Engineering maturity (PRD)
+•	IP protection
+•	$90B market potential
+________________________________________
+Additional Questions
+Logistics?
+Centralized device production + localized paper production to reduce shipping costs.
+Maintenance?
+Minimal. Powered by standard AA batteries (8–12 months).
+Is the liquid safe?
+Yes. Hypoallergenic, alcohol-free, pH-balanced, compliant with CE/FDA standards.
+Expected profitability per household?
+~$88 revenue, ~$52 gross profit annually.
+________________________________________
+CTA
+“Want more details? Contact us for full technical and investment data.”
+________________________________________
+Technical Specification (Summary)
+Core Stack
+•	Frontend: React / Next.js
+•	Backend: Node.js / Python
+•	Database: PostgreSQL / MongoDB
+•	Hosting: AWS / Azure / GCP
+•	Security: SSL + AES-256 encryption
+________________________________________
+UI/UX Style Guide
+•	Primary Color: Hygiene Blue
+•	Background: Premium White
+•	Accent: Tech Grey
+•	Typography: Clean Sans-serif
+•	Experience:
+o	Scroll-based storytelling
+o	Interactive timelines
+o	Responsive (mobile + desktop)
+o	Fast 3D/animation loading
+
