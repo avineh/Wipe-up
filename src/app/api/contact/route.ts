@@ -1,25 +1,30 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, phone, company, userType, message, newsletter } = body;
 
-    // TODO: Implement actual email sending logic here using a service like Resend, SendGrid, or Nodemailer.
-    // Example with Resend (requires npm install resend):
-    // import { Resend } from 'resend';
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'onboarding@resend.dev',
-    //   to: 'WipeUp2026@gmail.com',
-    //   subject: newsletter ? 'WipeUp Contact & Newsletter Subscription' : 'WipeUp Contact Form',
-    //   text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nUser Type: ${userType}\n\nMessage:\n${message}\n\nNewsletter Subscription: ${newsletter ? 'Yes' : 'No'}`,
-    // });
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
-    console.log("Received contact form submission:", body);
+    const subject = newsletter ? "WipeUp Contact & Newsletter Subscription" : "WipeUp Contact Form";
 
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'wipeup2026@gmail.com',
+      replyTo: email,
+      subject: subject,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nUser Type: ${userType}\n\nMessage:\n${message}\n\nNewsletter Subscription: ${newsletter ? 'Yes' : 'No'}`,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true, message: "Message sent successfully" });
   } catch (error) {
