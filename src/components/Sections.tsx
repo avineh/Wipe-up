@@ -47,11 +47,11 @@ export function Hero({ dict, lang }: { dict: Dictionary, lang: string }) {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-wrap gap-4"
           >
-            <a href="#" className="btn btn-primary flex items-center gap-2">
+            <a href="/WIPE_UP_Investor_Deck.pptx" className="btn btn-primary flex items-center gap-2" download>
               <Download size={20} />
               {dict.hero.downloadPptx}
             </a>
-            <a href="#" className="btn btn-outline flex items-center gap-2">
+            <a href="/WIPE_UP_Investor_Deck.pdf" className="btn btn-outline flex items-center gap-2" download>
               <Download size={20} />
               {dict.hero.downloadPdf}
             </a>
@@ -305,25 +305,21 @@ export function Experience({ dict }: { dict: Dictionary }) {
       <div className="container relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-16">{dict.experience.title}</h2>
 
-        <div className="grid-3 gap-8">
-          {[
-            { text: dict.experience.scene1, delay: 0.2 },
-            { text: dict.experience.scene2, delay: 0.4 },
-            { text: dict.experience.scene3, delay: 0.6 }
-          ].map((scene, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: scene.delay, duration: 0.8 }}
-              className="p-8 border border-white/20 rounded-3xl bg-white/5 backdrop-blur-md"
-            >
-              <div className="text-6xl font-bold text-primary mb-6 opacity-50">0{i + 1}</div>
-              <p className="text-lg leading-relaxed">{scene.text}</p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center w-full"
+        >
+          <Image 
+            src="/Personal-Hygiene-Evolution.png" 
+            alt="Personal Hygiene Evolution" 
+            width={1200} 
+            height={800} 
+            className="w-full max-w-5xl rounded-3xl shadow-2xl border border-white/20" 
+          />
+        </motion.div>
       </div>
     </section>
   )
