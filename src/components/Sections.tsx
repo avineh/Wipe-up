@@ -442,9 +442,9 @@ export function FAQ({ dict }: { dict: Dictionary }) {
 
         <div className="space-y-4 w-full">
           {dict.faq.questions.map((q, i) => (
-            <div key={i} className="border border-accent rounded-2xl bg-white w-full overflow-hidden">
+            <div key={i} className="border border-accent rounded-2xl bg-white shadow-sm w-full" style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}>
               <button
-                className="w-full text-left rtl:text-right px-6 py-4 font-semibold text-lg flex justify-between items-center hover:bg-bg-secondary transition-colors outline-none"
+                className="w-full text-left rtl:text-right px-6 py-5 font-semibold text-lg flex justify-between items-center transition-colors outline-none rounded-2xl"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
                 <span className="pr-4 rtl:pr-0 rtl:pl-4">{q.q}</span>
@@ -456,7 +456,7 @@ export function FAQ({ dict }: { dict: Dictionary }) {
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="px-6 py-4 text-text-secondary bg-bg-secondary/50 border-t border-accent">
+                <div className="px-6 pb-5 pt-0 text-text-secondary bg-white">
                   {q.a}
                 </div>
               </motion.div>
@@ -472,25 +472,37 @@ export function FAQ({ dict }: { dict: Dictionary }) {
 export function Contact({ dict }: { dict: Dictionary }) {
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSubmitting(true)
     
     const form = e.target as HTMLFormElement;
-    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-    const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
-    const company = (form.elements.namedItem('company') as HTMLInputElement).value;
-    const userType = (form.elements.namedItem('userType') as HTMLSelectElement).value;
-    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
-    const newsletter = (form.elements.namedItem('newsletter') as HTMLInputElement).checked;
+    const formData = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      company: (form.elements.namedItem('company') as HTMLInputElement).value,
+      userType: (form.elements.namedItem('userType') as HTMLSelectElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      newsletter: (form.elements.namedItem('newsletter') as HTMLInputElement).checked
+    };
 
-    const subject = newsletter ? "WipeUp Contact & Newsletter Subscription" : "WipeUp Contact Form";
-    const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nUser Type: ${userType}\n\nMessage:\n${message}\n\nNewsletter Subscription: ${newsletter ? 'Yes' : 'No'}`;
-    
-    window.location.href = `mailto:WipeUp2026@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      setSubmitted(true);
+      form.reset();
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Failed to submit form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -511,7 +523,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">{dict.contact.form.phone}</label>
-              <input type="tel" name="phone" required className="input-field" />
+              <input type="tel" name="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" className="input-field" />
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">{dict.contact.form.company}</label>
@@ -530,7 +542,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
 
           <div className="mb-6">
             <label className="block text-sm font-medium mb-2">{dict.contact.form.message}</label>
-            <textarea name="message" rows={4} className="input-field" required></textarea>
+            <textarea name="message" rows={4} className="input-field"></textarea>
           </div>
 
           <div className="mb-8 flex items-center gap-2">
@@ -538,8 +550,8 @@ export function Contact({ dict }: { dict: Dictionary }) {
             <label htmlFor="newsletter" className="text-sm">{dict.contact.form.newsletter}</label>
           </div>
 
-          <button type="submit" className="btn btn-primary w-full py-4 text-lg">
-            {dict.contact.form.submit}
+          <button type="submit" disabled={isSubmitting} className="btn btn-primary w-full py-4 text-lg disabled:opacity-70 disabled:cursor-not-allowed">
+            {isSubmitting ? "Sending..." : dict.contact.form.submit}
           </button>
 
           {submitted && (
