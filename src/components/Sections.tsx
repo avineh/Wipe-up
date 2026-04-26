@@ -105,7 +105,7 @@ export function Footer({ dict }: { dict: Dictionary }) {
               {dict.hero.subtitle}
             </p>
             <div className="flex items-center gap-4">
-              <a href="mailto:contact@wipeup.com" className="text-text-secondary hover:text-white transition-colors">contact@wipeup.com</a>
+              <a href="mailto:WipeUp2026@gmail.com" className="text-text-secondary hover:text-white transition-colors">WipeUp2026@gmail.com</a>
             </div>
           </div>
 
@@ -440,21 +440,26 @@ export function FAQ({ dict }: { dict: Dictionary }) {
       <div className="container max-w-3xl">
         <h2 className="section-title">{dict.faq.title}</h2>
 
-        <div className="space-y-4">
+        <div className="space-y-4 w-full">
           {dict.faq.questions.map((q, i) => (
-            <div key={i} className="border border-accent rounded-2xl overflow-hidden">
+            <div key={i} className="border border-accent rounded-2xl bg-white w-full overflow-hidden">
               <button
-                className="w-full text-left rtl:text-right px-6 py-4 font-semibold text-lg flex justify-between items-center hover:bg-bg-secondary transition-colors"
+                className="w-full text-left rtl:text-right px-6 py-4 font-semibold text-lg flex justify-between items-center hover:bg-bg-secondary transition-colors outline-none"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                {q.q}
-                <ChevronDown className={`transform transition-transform ${openIndex === i ? 'rotate-180' : ''}`} />
+                <span className="pr-4 rtl:pr-0 rtl:pl-4">{q.q}</span>
+                <ChevronDown className={`flex-shrink-0 transform transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} />
               </button>
-              {openIndex === i && (
+              <motion.div
+                initial={false}
+                animate={{ height: openIndex === i ? 'auto' : 0, opacity: openIndex === i ? 1 : 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="overflow-hidden"
+              >
                 <div className="px-6 py-4 text-text-secondary bg-bg-secondary/50 border-t border-accent">
                   {q.a}
                 </div>
-              )}
+              </motion.div>
             </div>
           ))}
         </div>
@@ -469,6 +474,21 @@ export function Contact({ dict }: { dict: Dictionary }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    
+    const form = e.target as HTMLFormElement;
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
+    const company = (form.elements.namedItem('company') as HTMLInputElement).value;
+    const userType = (form.elements.namedItem('userType') as HTMLSelectElement).value;
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+    const newsletter = (form.elements.namedItem('newsletter') as HTMLInputElement).checked;
+
+    const subject = newsletter ? "WipeUp Contact & Newsletter Subscription" : "WipeUp Contact Form";
+    const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nUser Type: ${userType}\n\nMessage:\n${message}\n\nNewsletter Subscription: ${newsletter ? 'Yes' : 'No'}`;
+    
+    window.location.href = `mailto:WipeUp2026@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 5000)
   }
@@ -483,25 +503,25 @@ export function Contact({ dict }: { dict: Dictionary }) {
           <div className="grid-2 mb-6">
             <div>
               <label className="block text-sm font-medium mb-2">{dict.contact.form.name}</label>
-              <input type="text" required className="input-field" />
+              <input type="text" name="name" required className="input-field" />
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">{dict.contact.form.email}</label>
-              <input type="email" required className="input-field" />
+              <input type="email" name="email" required className="input-field" />
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">{dict.contact.form.phone}</label>
-              <input type="tel" className="input-field" />
+              <input type="tel" name="phone" required className="input-field" />
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">{dict.contact.form.company}</label>
-              <input type="text" className="input-field" />
+              <input type="text" name="company" className="input-field" />
             </div>
           </div>
 
           <div className="mb-6">
             <label className="block text-sm font-medium mb-2">{dict.contact.form.userType}</label>
-            <select className="input-field bg-white">
+            <select name="userType" className="input-field bg-white">
               <option>{dict.contact.form.types.investor}</option>
               <option>{dict.contact.form.types.partner}</option>
               <option>{dict.contact.form.types.customer}</option>
@@ -510,11 +530,11 @@ export function Contact({ dict }: { dict: Dictionary }) {
 
           <div className="mb-6">
             <label className="block text-sm font-medium mb-2">{dict.contact.form.message}</label>
-            <textarea rows={4} className="input-field" required></textarea>
+            <textarea name="message" rows={4} className="input-field" required></textarea>
           </div>
 
           <div className="mb-8 flex items-center gap-2">
-            <input type="checkbox" id="newsletter" className="w-4 h-4 text-primary rounded focus:ring-primary" />
+            <input type="checkbox" name="newsletter" id="newsletter" className="w-4 h-4 text-primary rounded focus:ring-primary" />
             <label htmlFor="newsletter" className="text-sm">{dict.contact.form.newsletter}</label>
           </div>
 
