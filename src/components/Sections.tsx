@@ -313,9 +313,10 @@ export function QuickGlance({ dict }: { dict: Dictionary }) {
           className="flex justify-center w-full"
         >
           <Image
-            src="/Personal-Hygiene-Evolution.png"
+            src="/Evolution.png"
             alt="Personal Hygiene Evolution"
-
+            width="800"
+            height="600"
             className="w-full max-w-5xl rounded-3xl shadow-2xl border border-white/20"
           />
         </motion.div>
