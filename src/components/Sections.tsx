@@ -305,19 +305,18 @@ export function QuickGlance({ dict }: { dict: Dictionary }) {
       <div className="container relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-16">{dict.quickGlance.title}</h2>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="flex justify-center w-full"
         >
-          <Image 
-            src="/Personal-Hygiene-Evolution.png" 
-            alt="Personal Hygiene Evolution" 
-            width={1200} 
-            height={800} 
-            className="w-full max-w-5xl rounded-3xl shadow-2xl border border-white/20" 
+          <Image
+            src="/Personal-Hygiene-Evolution.png"
+            alt="Personal Hygiene Evolution"
+
+            className="w-full max-w-5xl rounded-3xl shadow-2xl border border-white/20"
           />
         </motion.div>
       </div>
@@ -477,7 +476,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     const form = e.target as HTMLFormElement;
     const formData = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
