@@ -23,7 +23,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <Investors dict={dict} />
       <FAQ dict={dict} />
       <Contact dict={dict} />
-      
+
       <Footer dict={dict} />
     </main>
   )
