@@ -7,10 +7,12 @@ export async function POST(request: Request) {
     const { name, email, phone, company, userType, message, newsletter } = body;
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // משתמש ב-SSL
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        pass: process.env.EMAIL_PASS, // וודא שזו ה-App Password
       },
     });
 
