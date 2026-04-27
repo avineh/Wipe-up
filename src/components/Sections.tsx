@@ -297,13 +297,13 @@ export function Financials({ dict }: { dict: Dictionary }) {
   )
 }
 
-// EXPERIENCE (ANIMATION)
-export function Experience({ dict }: { dict: Dictionary }) {
+// QUICK GLANCE
+export function QuickGlance({ dict }: { dict: Dictionary }) {
   return (
-    <section id="experience" className="section bg-text-primary text-white relative overflow-hidden">
+    <section id="quick-glance" className="section bg-text-primary text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
       <div className="container relative z-10 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16">{dict.experience.title}</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-16">{dict.quickGlance.title}</h2>
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

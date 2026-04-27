@@ -1,5 +1,5 @@
 import Navigation from '../../components/Navigation'
-import { Hero, Roadmap, Team, Financials, Experience, Technology, Investors, FAQ, Contact, Footer } from '../../components/Sections'
+import { Hero, Roadmap, Team, Financials, QuickGlance, Technology, Investors, FAQ, Contact, Footer } from '../../components/Sections'
 import { dictionaries } from '../../i18n/dictionaries'
 import { notFound } from 'next/navigation'
 
@@ -16,9 +16,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <Navigation dict={dict} lang={lang} />
       <Hero dict={dict} lang={lang} />
       <Roadmap dict={dict} />
+      <QuickGlance dict={dict} />
       <Team dict={dict} />
       <Financials dict={dict} />
-      <Experience dict={dict} />
       <Technology dict={dict} />
       <Investors dict={dict} />
       <FAQ dict={dict} />

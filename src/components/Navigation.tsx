@@ -11,21 +11,33 @@ export default function Navigation({ dict, lang }: { dict: Dictionary, lang: str
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const [activeSection, setActiveSection] = useState('')
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
+
+      const sections = navLinks.map(link => link.href.substring(1))
+      let current = ''
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element && window.scrollY >= element.offsetTop - 150) {
+          current = section
+        }
+      }
+      setActiveSection(current)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleLang = lang === 'en' ? 'he' : 'en'
 
   const navLinks = [
     { href: '#roadmap', label: dict.nav.roadmap },
+    { href: '#quick-glance', label: dict.nav.quickGlance },
     { href: '#team', label: dict.nav.team },
     { href: '#plan', label: dict.nav.plan },
-    { href: '#experience', label: dict.nav.experience },
     { href: '#technology', label: dict.nav.technology },
     { href: '#investors', label: dict.nav.investors },
     { href: '#faq', label: dict.nav.faq },
@@ -46,7 +58,10 @@ export default function Navigation({ dict, lang }: { dict: Dictionary, lang: str
           <ul className="flex items-center gap-6 m-0 p-0 text-sm font-medium">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="hover:text-primary transition-colors">
+                <a 
+                  href={link.href} 
+                  className={`transition-all duration-300 pb-1 ${activeSection === link.href.substring(1) ? 'text-primary border-b-2 border-primary font-bold' : 'hover:text-primary'}`}
+                >
                   {link.label}
                 </a>
               </li>
@@ -82,7 +97,7 @@ export default function Navigation({ dict, lang }: { dict: Dictionary, lang: str
               <li key={link.href}>
                 <a 
                   href={link.href} 
-                  className="block w-full py-2 hover:text-primary"
+                  className={`block w-full py-2 ${activeSection === link.href.substring(1) ? 'text-primary font-bold' : 'hover:text-primary'}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}

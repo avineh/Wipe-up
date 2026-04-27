@@ -4,7 +4,7 @@ export const dictionaries = {
       roadmap: 'Roadmap',
       team: 'Team',
       plan: 'Plan & Financials',
-      experience: 'Experience',
+      quickGlance: 'Quick Glance',
       technology: 'Technology',
       investors: 'Investors',
       faq: 'FAQ',
@@ -73,8 +73,8 @@ export const dictionaries = {
       ],
       opex: '~₪22,000/month (rent, taxes, insurance)'
     },
-    experience: {
-      title: 'Experience true cleanliness, with a single touch.',
+    quickGlance: {
+      title: 'Quick Glance',
       scene1: 'Wet wipes clog pipes and bidets require plumbing. Traditional dry paper is primitive and uncomfortable.',
       scene2: 'Choose your comfort: Press Button A for custom-length dry paper, or Button B for perfectly moistened paper via our internal micro-mist system.',
       scene3: 'A 23° ceramic blade cuts cleanly. Enjoy a hygienic, eco-friendly bidet experience without the plumbing.'
@@ -158,7 +158,7 @@ export const dictionaries = {
       roadmap: 'מפת דרכים',
       team: 'צוות',
       plan: 'תוכנית ופיננסים',
-      experience: 'חוויה',
+      quickGlance: 'מבט מהיר',
       technology: 'טכנולוגיה',
       investors: 'משקיעים',
       faq: 'שאלות ותשובות',
@@ -227,8 +227,8 @@ export const dictionaries = {
       ],
       opex: '~₪22,000/חודש (שכירות, מיסים, ביטוח)'
     },
-    experience: {
-      title: 'חוויית ניקיון אמיתית, בלחיצה אחת.',
+    quickGlance: {
+      title: 'מבט מהיר',
       scene1: 'מגבונים לחים סותמים את הצנרת והתקנת בידה דורשת אינסטלציה. הניקיון המסורתי בנייר יבש הוא פרימיטיבי ולא נוח.',
       scene2: 'בחרו את הנוחות שלכם: לחצו על כפתור א\' לנייר יבש באורך מותאם אישית, או על כפתור ב\' לנייר לח במידה המושלמת, באמצעות מערכת ערפל-מיקרו פנימית.',
       scene3: 'להב קרמי ב-23° חותך בצורה חלקה. תיהנו מחוויית בידה היגיינית וידידותית לסביבה, ללא צורך באינסטלציה.'
