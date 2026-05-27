@@ -1,3 +1,5 @@
+// import { dd } from "framer-motion/client";
+
 export const dictionaries = {
   en: {
     nav: {
@@ -25,17 +27,17 @@ export const dictionaries = {
       completed: {
         title: 'Completed Stages',
         items: [
-          { title: 'Ideation & Proof of Concept', text: 'A functional prototype was built, successfully demonstrating micro-mist wetting without tearing the paper.' },
-          { title: 'Global Go-To-Market Strategy', text: 'Market analysis across the US, Europe, Japan, and Israel, identifying a 15–20% adoption potential in the Israeli market.' },
-          { title: 'Intellectual Property Protection', text: 'Patent application No. 327637 filed under an accelerated track, protecting the spiral mechanism and consumable lock-in system.' },
-          { title: 'Full Engineering Definition', text: 'Completion of PRD Version 6.0, including a fully closed-system architecture.' }
+          { title: 'Ideation & Proof of Concept (POC)', text: 'A functional prototype was built, successfully demonstrating micro-mist wetting without tearing the paper.' },
+          { title: 'Global Go-To-Market Strategy & Market Analysis', text: 'Market analysis across the US, Europe, Japan, and Israel, identifying a 15–20% adoption potential in the Israeli market.' },
+          { title: 'Intellectual Property Protection (Patent analysis)', text: 'Patent application No. 327637 filed under an accelerated track, protecting the spiral mechanism and consumable lock-in system.' },
+          { title: 'Full Engineering Definition & PRD Completion', text: 'Completion of PRD Version 6.0, including a fully closed-system architecture.' }
         ]
       },
       current: {
         title: 'Current Stage',
         items: [
           { title: 'Engineering Documentation', text: 'Transition from conceptual designs to full engineering documentation (STEP files + BOM).' },
-          { title: 'Lock-in Finalization', text: 'Finalization of the proprietary Lock-in model ensuring recurring revenue via an asymmetric sleeve mechanism.' }
+          { title: 'The Green Track – De-risking Seed Investment', text: 'The venture is now on "The Green Track": the business significance of completing the POC and early engineering definition is dramatic de-risking for Seed-stage investors. Since technological feasibility is proven and specifications are aligned, the risk of design failure during the prototype phase is virtually zero. This significantly shortens Time-to-Market and secures mass production costs against unexpected budget overruns. This represents the highest value-add of the current stage.' }
         ]
       },
       future: {
@@ -44,6 +46,13 @@ export const dictionaries = {
           { title: 'Months 0–5', text: 'Development of a complete engineering prototype for presentation to paper corporations.' },
           { title: 'Months 6–12', text: 'Establishment of manufacturing infrastructure (CAPEX: ₪490,000), including cutting and packaging machines.' },
           { title: 'Months 12–18', text: 'Pilot in Israel (local production via partners like Hogla/Sano to reduce logistics costs), CE/FDA certification, and global launch.' }
+        ]
+      },
+      registeredDesign: {
+        title: 'Legal Milestone – Registered Design Approved',
+        items: [
+          { title: 'Legal Impact', text: 'This approval grants the company verified, exclusive intellectual property rights over the product\'s aesthetics, visual form, and ergonomics. It establishes an immediate legal barrier, completely blocking competitors from cloning or mimicking the device\'s appearance and allowing rapid enforcement against infringements.' },
+          { title: 'Operational Impact', text: 'This approval eliminates any risk of future design-related legal injunctions, clearing the path for direct investment in mass-production injection molds (Tooling) with absolute confidence, ensuring long-term supply chain stability.' }
         ]
       }
     },
@@ -180,16 +189,16 @@ export const dictionaries = {
         title: 'שלבים שהושלמו',
         items: [
           { title: 'הוכחת היתכנות (POC)', text: 'אב-טיפוס עובד מדגים בהצלחה הרטבה באמצעות ערפל-מיקרו ללא קריעת הנייר.' },
-          { title: 'אסטרטגיית חדירה לשוק', text: 'ניתוח שוק בארה"ב, אירופה, יפן וישראל, עם פוטנציאל אימוץ של 15-20% בשוק הישראלי.' },
-          { title: 'הגנה על קניין רוחני', text: 'בקשת פטנט מס\' 327637 הוגשה במסלול מזורז, המגנה על המנגנון הספירלי ונעילת החומרים המתכלים.' },
-          { title: 'אפיון הנדסי מלא', text: 'השלמת PRD גרסה 6.0, כולל ארכיטקטורת מערכת סגורה מלאה.' }
+          { title: 'אסטרטגיית חדירה לשוק גלובלית וניתוח שוק', text: 'ניתוח שוק בארה"ב, אירופה, יפן וישראל, עם פוטנציאל אימוץ של 15-20% בשוק הישראלי.' },
+          { title: 'הגנה על קניין רוחני (בחינת פטנטביליות)', text: 'בקשת פטנט מס\' 327637 הוגשה במסלול מזורז, המגנה על המנגנון הספירלי ונעילת החומרים המתכלים.' },
+          { title: 'אפיון הנדסי מלא והשלמת PRD', text: 'השלמת PRD גרסה 6.0, כולל ארכיטקטורת מערכת סגורה מלאה.' }
         ]
       },
       current: {
         title: 'שלב נוכחי',
         items: [
           { title: 'תיעוד הנדסי', text: 'מעבר מעיצובים קונספטואליים לתיעוד הנדסי מלא (קבצי STEP + BOM).' },
-          { title: 'השלמת מנגנון הנעילה', text: 'סיום מודל הנעילה המבטיח הכנסות חוזרות באמצעות מנגנון שרוול אסימטרי.' }
+          { title: 'המסלול הירוק – הפחתת סיכונים', text: 'המיזם נמצא כעת ב"מסלול הירוק": השלמת ה-POC ואפיון הנדסי מוקדם משמעותם הפחתת סיכונים דרמטית עבור משקיעי Seed. היתכנות טכנולוגית כבר הוכחה והמפרט מיושר, כך שהסיכון לכשל תכנוני בשלב האב-טיפוס שואף לאפס. זה מקצר משמעותית את זמן ההגעה לשוק ומגן על עלויות הייצור ההמוני מפני חריגות תקציב בלתי צפויות. זהו הערך המוסף הגבוה ביותר של השלב הנוכחי.' }
         ]
       },
       future: {
@@ -198,6 +207,13 @@ export const dictionaries = {
           { title: 'חודשים 0–5', text: 'פיתוח אב-טיפוס הנדסי מלא להצגה לתאגידי נייר.' },
           { title: 'חודשים 6–12', text: 'הקמת תשתית ייצור (השקעה הונית: ₪490,000), כולל מכונות חיתוך ואריזה.' },
           { title: 'חודשים 12–18', text: 'פיילוט בישראל (ייצור מקומי בשיתוף פעולה להפחתת עלויות לוגיסטיקה), אישורי CE/FDA, והשקה גלובלית.' }
+        ]
+      },
+      registeredDesign: {
+        title: 'אבני דרך משפטית – אישור מדגם רשום',
+        items: [
+          { title: 'ממד משפטי', text: 'אישור זה מעניק לחברה זכויות קניין רוחני מוכחות ובלעדיות מוחלטת על האסתטיקה, הצורה החזותית והארגונומיה של המוצר. הוא יוצר מחסום משפטי מיידי שמונע לחלוטין מתחרים להעתיק או לחקות את מראה המכשיר, ומאפשר אכיפה מהירה כנגד הפרות.' },
+          { title: 'ממד תפעולי', text: 'אישור זה מסיר כל סיכון לעיכובים משפטיים עתידיים הקשורים לעיצוב, ופותח את הדרך להשקעה ישירה בבניית תבניות ההזרקה ההמוניות (Tooling) בביטחון מוחלט, ובכך מבטיח יציבות ארוכת טווח בשרשרת האספקה.' }
         ]
       }
     },

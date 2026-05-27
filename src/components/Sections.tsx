@@ -206,6 +206,21 @@ export function Roadmap({ dict }: { dict: Dictionary }) {
             </div>
           </motion.div>
         </div>
+
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="glass p-8 rounded-2xl border-t-4 border-t-yellow-500 mt-12">
+          <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-yellow-600">
+            <Shield /> {dict.roadmap.registeredDesign.title}
+          </h3>
+          <div className="space-y-6">
+            {dict.roadmap.registeredDesign.items.map((item, i) => (
+              <div key={i} className="relative pl-6 rtl:pl-0 rtl:pr-6">
+                <div className="absolute left-0 rtl:right-0 rtl:left-auto top-2 w-2 h-2 bg-yellow-500 rounded-full"></div>
+                <h4 className="font-semibold text-text-primary">{item.title}</h4>
+                <p className="text-sm text-text-secondary mt-1">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )
